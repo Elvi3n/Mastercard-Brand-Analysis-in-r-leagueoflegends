@@ -6,6 +6,12 @@ Mastercard became the first global sponsor of League of Legends esports in Septe
 
 The objective of this analysis is to uncover player sentiment surrounding Mastercard’s sponsorship by examining discussions and mentions of the brand within the League of Legends subreddit (r/leagueoflegends).
 
+## Dashboard 
+
+https://public.tableau.com/app/profile/mark.se8364/viz/Sentiment_17619065594510/MastercardSA
+
+<img width="1000" height="666" alt="image" src="https://github.com/user-attachments/assets/3806eda4-1f5f-42b2-aabf-2a1f0aa45e6c" />
+
 # Research Questions
 
 1. What percentage of mentions of Mastercard in r/leagueoflegends are positive?
