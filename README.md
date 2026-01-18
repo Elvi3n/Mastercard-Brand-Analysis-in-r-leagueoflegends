@@ -4,7 +4,7 @@
 
 Mastercard became the first global sponsor of League of Legends esports in September 2018 — the first time a major payment technology company had made such a comprehensive commitment to the esports industry. The multi-year agreement with Riot Games established Mastercard as the exclusive global payment services partner for all of League of Legends’ premier tournaments. The deal includes in-game promotions, co-branded cards offered by banks worldwide, and exclusive presale privileges to major events for cardholders.
 
-The objective of this analysis is to uncover player sentiment surrounding Mastercard’s sponsorship by examining discussions and mentions of the brand within the League of Legends subreddit (r/leagueoflegends).
+**The objective of this analysis is to uncover player sentiment surrounding Mastercard’s sponsorship by examining discussions and mentions of the brand within the League of Legends subreddit (r/leagueoflegends)**.
 
 ## Dashboard 
 
