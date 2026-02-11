@@ -12,12 +12,6 @@ https://public.tableau.com/app/profile/mark.se8364/viz/Sentiment_17619065594510/
 
 <img width="1000" height="666" alt="image" src="https://github.com/user-attachments/assets/3806eda4-1f5f-42b2-aabf-2a1f0aa45e6c" />
 
-# Research Questions
-
-1. What percentage of mentions of Mastercard in r/leagueoflegends are positive?
-
-2. What themes and topics are commonly discussed within each sentiment tone (positive, neutral, negative)?
-
 ## Key Findings
 
 1. Mastercard’s visibility peaks during the annual World Championship, which drives both discussion volume and emotional engagement.
@@ -36,7 +30,9 @@ https://public.tableau.com/app/profile/mark.se8364/viz/Sentiment_17619065594510/
 2. Improve fairness perception in ticketing experiences:
     - Increase transparency around presales and anti-bot measures, and communicate Mastercard’s role clearly to reduce misplaced frustration over ticketing issues.
 
-# Data Collection
+# Methods
+
+## Data Collection
 
 PRAW (Python Reddit API Wrapper) was used to collect data directly from Reddit. This library enables structured access to Reddit’s public API, allowing for the retrieval of posts, comments, authors, timestamps, and engagement metrics.
 
@@ -48,6 +44,28 @@ For this project, discussions were extracted from the r/leagueoflegends subreddi
 - Comment hierarchy (parent-child relationships)
 - Upvotes
 - Text content for SA and topic analysis
+
+## Analysis Workflow
+
+The analysis pipeline processes raw Reddit data through three specialized stages:
+
+**1. Data Preprocessing**
+   
+- Normalization: Masked user handles (@user) and standardized URLs (http) using Regex.
+- Aggregation: Grouped comments by parentID to analyze full conversation threads.
+- LDA Cleaning: Stripped non-alphabetic characters and applied a custom stopword filter (removing noise like "lol", "game", "league") to isolate meaningful topics.
+
+**2. Sentiment Analysis (RoBERTa)**
+
+- Model: Utilized cardiffnlp/twitter-roberta-base-sentiment-latest via Hugging Face.
+- Logic: Unlike lexicon-based tools (VADER), this Transformer model is pre-trained on 124M tweets, allowing it to capture the sarcasm and informal nuance typical of r/leagueoflegends.
+- Output: Classified posts into Positive, Neutral, and Negative with associated confidence scores.
+
+**3. Topic Modeling (LDA)**
+
+- Vectorization: Converted text into a document-term matrix via CountVectorizer (min_df=2).
+- Thematic Extraction: Employed Latent Dirichlet Allocation (LDA) to find 5 key topics per sentiment group (e.g., "ticket scalping" vs. "opening ceremonies").
+- Mapping: Each thread was tagged with its Dominant Topic based on the highest probability distribution.
 
 # Repo Structure
 ```
