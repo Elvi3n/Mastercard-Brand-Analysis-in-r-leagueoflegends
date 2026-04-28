@@ -57,7 +57,7 @@ The analysis pipeline processes raw Reddit data through three specialized stages
 
 **2. Sentiment Analysis (RoBERTa)**
 
-- Model: Utilized cardiffnlp/twitter-roberta-base-sentiment-latest via Hugging Face.
+- Model Utilized: cardiffnlp/twitter-roberta-base-sentiment-latest via Hugging Face.
 - Logic: Unlike lexicon-based tools (VADER), this Transformer model is pre-trained on 124M tweets, allowing it to capture the sarcasm and informal nuance typical of r/leagueoflegends.
 - Output: Classified posts into Positive, Neutral, and Negative with associated confidence scores.
 
